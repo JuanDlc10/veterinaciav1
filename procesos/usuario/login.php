@@ -7,7 +7,7 @@
 
     $respuesta = $Usuario->logear($email,$password);
     if ($respuesta) {
-        header('location:../../vistas/inicio.php');
+        header('location:../../vistas/inicio/inicio.php');
     } else {
         echo 'No se pudo logear';
     }

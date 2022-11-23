@@ -1,8 +1,8 @@
 <?php session_start();
     if(isset($_SESSION['usuario'])){
         
-        include './header.php'; 
-        include './navbar.php'; 
+        include '../header.php'; 
+        include '../navbar.php'; 
         
 ?>
 <div class="container">
@@ -12,10 +12,10 @@
         </div>
     </div>
 </div>
-<?php include './footer.php'; ?>
+<?php include '../footer.php'; ?>
 
 <?php
     }else{
-        header('location:./index.php');
+        header('location:../../index.php');
     }
 ?>
