@@ -1,6 +1,6 @@
 <?php session_start();
-    include "../../clases/Usuario.php";
-    $Usuario = new Usuario();
+    include "../../clases/Auth.php";
+    $Usuario = new Auth();
 
     $email = $_POST['email'];
     $password = sha1($_POST['password']); 

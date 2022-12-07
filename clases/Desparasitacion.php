@@ -1,6 +1,6 @@
 <?php 
     include "Conexion.php";
-    class Vacunas extends Conexion {
+    class Desparasitacion extends Conexion {
         #Exteds sirve para declarar la herencia
         public function opcionesPersonas() {
             $conexion = parent::conectar();
@@ -30,19 +30,17 @@
             }
             return $opciones;
         }
-        public function agregarVacuna($datos) {
+        public function agregarDesparasitacion($datos) {
             $conexion = parent::conectar();
-            $sql = "INSERT INTO t_vacunas (id_mascota,
+            $sql = "INSERT INTO t_desparasitacion (id_mascota,
                                             id_usuario,
-                                            nombre,
                                             fecha
                                             )
                                             VALUES
-                                            (?,?,?,?)";
+                                            (?,?,?)";
             $query = $conexion -> prepare($sql);
-            $query -> bind_param('iiss', $datos['id_mascota'],
+            $query -> bind_param('iis', $datos['id_mascota'],
                                             $datos['id_usuario'],
-                                            $datos['nombre'],
                                             $datos['fecha']);
             return $query -> execute();
         }

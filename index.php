@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col">
                 <h2 class="mt-3">Login de usuario</h2>
-                <form action="./procesos/usuario/login.php" method="post">
+                <form action="./procesos/auth/login.php" method="post">
                     <label for="email">Email</label>
                     <input type="Email" name="email" id="email" class="form-control">
                     <label for="password">Password</label>

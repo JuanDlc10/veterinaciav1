@@ -1,14 +1,20 @@
 <?php session_start();
     if(isset($_SESSION['usuario'])){
-        
+        include '../../clases/Conexion.php';
         include '../layouts/header.php'; 
         include '../layouts/navbar.php'; 
-        
+        $con = new Conexion();
+        $conexion = $con -> conectar();
 ?>
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2>Veterinaria</h2>
+            <h2>Mascotas de la veterinaria</h2>
+            <a href="./agregarMascota.php" class="btn btn-outline-primary">
+                Agregar Nuevo Usuario
+            </a>
+            <hr>
+            <?php include "tablaMascota.php"  ?>
         </div>
     </div>
 </div>
