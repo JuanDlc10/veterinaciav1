@@ -1,10 +1,10 @@
-<?php 
+<?php session_start();
     include "../../clases/Vacunas.php";
     $Vacunas = new Vacunas();
 
     $datos = array(
         "id_mascota" => $_POST['id_mascota'],
-        "id_usuario" => $_POST['id_persona'],
+        "id_usuario" => $_SESSION['idUsuario'],
         "nombre" => $_POST['nombre'],
         "fecha" => $_POST['fecha']
     );

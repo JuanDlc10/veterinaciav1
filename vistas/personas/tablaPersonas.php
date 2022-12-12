@@ -26,7 +26,8 @@
                 </a> 
             </td>
             <td>
-                <a href="#" class="btn btn-outline-danger">
+                <a href="../../procesos/persona/eliminarPersona.php?id=<?php echo $ver['id_persona']?>" 
+                    class="btn btn-outline-danger">
                     Eliminar
                 </a>
             </td>
@@ -35,3 +36,5 @@
         <?php endwhile; ?>
     </tbody>
 </table>
+
+

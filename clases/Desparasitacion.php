@@ -44,6 +44,13 @@
                                             $datos['fecha']);
             return $query -> execute();
         }
+        public function eliminarDesparasitacion($idDesparasitacion){
+            $conexion = parent::conectar();
+            $sql = "DELETE FROM t_desparasitacion WHERE id_desparasitacion = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('i',$idDesparasitacion);
+            return $query -> execute();
+        }
     }
 
 

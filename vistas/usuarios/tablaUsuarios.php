@@ -28,7 +28,8 @@
                 </a> 
             </td>
             <td>
-                <a href="#" class="btn btn-outline-danger">
+            <a href="../../procesos/usuarios/eliminarUsuario.php?id=<?php echo $ver['idUsuario']?>" 
+                    class="btn btn-outline-danger">
                     Eliminar
                 </a>
             </td>

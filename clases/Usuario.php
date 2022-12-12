@@ -44,5 +44,12 @@
                                             $datos['password']);
             return $query -> execute();
         }
+        public function eliminarUsuario($idUsuario){
+            $conexion = parent::conectar();
+            $sql = "DELETE FROM t_usuario WHERE id_usuario = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('i',$idUsuario);
+            return $query -> execute();
+        }
     }
 ?>

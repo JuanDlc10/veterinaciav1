@@ -7,6 +7,7 @@
         <tr>
             <th>Nombre del dueño</th>
             <th>Nombre de la mascota</th>
+            <th>Atendio</th>
             <th>Fecha</th>
             <th>Editar</th>
             <th>Eliminar</th>
@@ -17,6 +18,7 @@
         <tr>
             <td> <?php echo $ver['nombrePersona']; ?> </td>
             <td> <?php echo $ver['nombreMascota']; ?> </td>
+            <td> <?php echo $ver['nombreUsuario']; ?> </td>
             <td> <?php echo $ver['fecha']; ?> </td>
             <td> 
                 <a href="#" class="btn btn-outline-warning">
@@ -24,7 +26,8 @@
                 </a> 
             </td>
             <td>
-                <a href="#" class="btn btn-outline-danger">
+                <a href="../../procesos/desparasitacion/eliminarDesparasitacion.php?id=<?php echo $ver['idDesparasitacion'] ?>" 
+                class="btn btn-outline-danger">
                     Eliminar
                 </a>
             </td>

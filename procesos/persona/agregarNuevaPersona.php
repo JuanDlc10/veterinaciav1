@@ -13,7 +13,7 @@
     if ($respuesta) {
         ?>
         <script>
-            window.location.href = 'http://127.0.0.1/veterinaria/vistas/persona/persona.php'; 
+            window.location.href = 'http://127.0.0.1/veterinaria/vistas/personas/personas.php'; 
         </script>
     <?php
     } else {

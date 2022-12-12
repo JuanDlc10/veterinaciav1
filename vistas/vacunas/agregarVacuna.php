@@ -13,19 +13,11 @@
                     <form action="../../procesos/vacunas/agregarNuevaVacuna.php" method="post">
                         <div class="row">
                             <div class="col">
-                                <label for="id_persona">Nombre del dueño</label>
-                                <select name="id_persona" id="id_persona" class="form-select">
-                                <?php echo $Vacunas -> opcionesPersonas(); ?>{
-                                </select>
-                            </div>
-                            <div class="col">
                                 <label for="id_mascota">Nombre de la mascota</label>
                                 <select name="id_mascota" id="id_mascota" class="form-select">
                                 <?php echo $Vacunas -> opcionesMascotas(); ?>{
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col">
                                 <label for="nombre">Nombre de la vacuna</label>
                                 <input type="text" id="nombre" name="nombre" class="form-control" required>

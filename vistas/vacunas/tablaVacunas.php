@@ -9,6 +9,7 @@
             <th>Nombre de la mascota</th>
             <th>Tipo</th>
             <th>Nombre vacuna</th>
+            <th>Atendio</th>
             <th>Fecha de vacuna</th>
             <th>Editar</th>
             <th>Eliminar</th>
@@ -21,6 +22,7 @@
             <td> <?php echo $ver['nombreMascota']; ?> </td>
             <td> <?php echo $ver['tipo']; ?> </td>
             <td> <?php echo $ver['nombre']; ?> </td>
+            <td> <?php echo $ver['nombreUsuario']; ?> </td>
             <td> <?php echo $ver['fecha']; ?> </td>
             <td> 
                 <a href="#" class="btn btn-outline-warning">
@@ -28,7 +30,8 @@
                 </a> 
             </td>
             <td>
-                <a href="#" class="btn btn-outline-danger">
+                <a href="../../procesos/vacunas/eliminarVacuna.php?id=<?php echo $ver['idVacuna']?>" 
+                class="btn btn-outline-danger">
                     Eliminar
                 </a>
             </td>

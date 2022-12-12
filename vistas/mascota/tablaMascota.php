@@ -34,7 +34,8 @@
                 </a> 
             </td>
             <td>
-                <a href="#" class="btn btn-outline-danger">
+            <a href="../../procesos/mascota/eliminarMascota.php?id=<?php echo $ver['idMascota']?>" 
+                    class="btn btn-outline-danger">
                     Eliminar
                 </a>
             </td>

@@ -1,10 +1,10 @@
-<?php 
+<?php session_start();
     include "../../clases/Desparasitacion.php";
     $Desparasitacion = new Desparasitacion();
 
     $datos = array(
         "id_mascota" => $_POST['id_mascota'],
-        "id_usuario" => $_POST['id_persona'],
+        "id_usuario" => $_SESSION['idUsuario'],
         "fecha" => $_POST['fecha'],
     );
 

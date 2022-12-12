@@ -46,6 +46,13 @@
                                             $datos['fecha']);
             return $query -> execute();
         }
+        public function eliminarVacuna($idVacuna){
+            $conexion = parent::conectar();
+            $sql = "DELETE FROM t_vacunas WHERE id_vacuna = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('i',$idVacuna);
+            return $query -> execute();
+        }
     }
 
 
