@@ -51,5 +51,33 @@
             $query -> bind_param('i',$idUsuario);
             return $query -> execute();
         }
+        public function editarUsuario($idUsuario) {
+            $conexion = parent::conectar();
+            $sql = "SELECT * FROM t_usuario WHERE id_usuario = '$idUsuario'";
+            $respuesta = mysqli_query($conexion,$sql);
+            $persona = mysqli_fetch_array($respuesta);
+
+            $data = array ( 
+                "id_cat_rol" => $persona['id_cat_rol'],
+                "email" => $persona['email'],
+                "password" => $persona['password'],
+                "id" => $persona['id_usuario']
+            );
+            return $data;
+        }
+        public function actualizarUsuario($datos) {
+            $conexion = parent::conectar();
+            $sql = "UPDATE t_usuario SET 
+                                        id_cat_rol = ?,
+                                        email = ?,
+                                        password = ?
+                                        WHERE id_usuario = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('issi', $datos['id_cat_rol'],
+                                            $datos['email'],
+                                            $datos['password'],
+                                            $datos['id_usuario']);
+            return $query -> execute();
+        }
     }
 ?>

@@ -21,7 +21,8 @@
             <td> <?php echo $ver['nombre']; ?> </td>
             <td> <?php echo $ver['telefono']; ?> </td>
             <td> 
-                <a href="#" class="btn btn-outline-warning">
+                <a href="../personas/editarPersona.php?id=<?php echo $ver['id_persona']?>" 
+                class="btn btn-outline-warning">
                     Editar
                 </a> 
             </td>

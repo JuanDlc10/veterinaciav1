@@ -18,7 +18,7 @@
                     <input type="Email" name="email" id="email" class="form-control">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" class="form-control">
-                    <button class="btn btn-outline-primary mt-3">Entrar</button>
+                    <button class="btn btn-outline-primary rounded-pill mt-3">Entrar</button>
                 </form>
             </div>
         </div>

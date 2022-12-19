@@ -23,7 +23,8 @@
             <td> <?php echo $ver['nombreUsuario']; ?> </td>
             <td> <?php echo $ver['nombreRol']; ?> </td>
             <td> 
-                <a href="#" class="btn btn-outline-warning">
+                <a href="../usuarios/editarUsuario.php?id=<?php echo $ver['idUsuario']?>" 
+                class="btn btn-outline-warning">
                     Editar
                 </a> 
             </td>

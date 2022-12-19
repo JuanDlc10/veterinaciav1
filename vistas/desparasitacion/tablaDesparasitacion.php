@@ -21,7 +21,8 @@
             <td> <?php echo $ver['nombreUsuario']; ?> </td>
             <td> <?php echo $ver['fecha']; ?> </td>
             <td> 
-                <a href="#" class="btn btn-outline-warning">
+                <a href="../../vistas/desparasitacion/editarDesparasitacion.php?id=<?php echo $ver['idDesparasitacion'] ?>" 
+                class="btn btn-outline-warning">
                     Editar
                 </a> 
             </td>

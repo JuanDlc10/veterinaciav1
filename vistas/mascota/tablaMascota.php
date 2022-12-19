@@ -29,7 +29,8 @@
             <td> <?php echo $ver['sexo']; ?> </td>
             <td> <?php echo $ver['descripcion']; ?> </td>
             <td> 
-                <a href="#" class="btn btn-outline-warning">
+                <a href="../mascota/editarMascota.php?id=<?php echo $ver['idMascota']?>" 
+                class="btn btn-outline-warning">
                     Editar
                 </a> 
             </td>

@@ -51,6 +51,27 @@
             $query -> bind_param('i',$idDesparasitacion);
             return $query -> execute();
         }
+        public function editarDesparasitacion($idDesparasitacion) {
+            $conexion = parent::conectar();
+            $sql = "SELECT * FROM t_desparasitacion WHERE id_desparasitacion = '$idDesparasitacion'";
+            $respuesta = mysqli_query($conexion,$sql);
+            $desparasitacion = mysqli_fetch_array($respuesta);
+
+            $data = array ( 
+                "fecha" => $desparasitacion['fecha'],
+                "id" => $desparasitacion['id_desparasitacion']
+            );
+            return $data;
+        }
+        public function actualizarDesparasitacion($datos) {
+            $conexion = parent::conectar();
+            $sql = "UPDATE t_desparasitacion SET fecha = ?
+                                        WHERE id_desparasitacion = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('si',   $datos['fecha_desparasitacion'],
+                                            $datos['id_desparasitacion']);
+            return $query -> execute();
+        }
     }
 
 

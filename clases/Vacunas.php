@@ -53,6 +53,30 @@
             $query -> bind_param('i',$idVacuna);
             return $query -> execute();
         }
+        public function editarVacuna($idVacuna) {
+            $conexion = parent::conectar();
+            $sql = "SELECT * FROM t_vacunas WHERE id_vacuna = '$idVacuna'";
+            $respuesta = mysqli_query($conexion,$sql);
+            $persona = mysqli_fetch_array($respuesta);
+
+            $data = array ( 
+                "nombre" => $persona['nombre'],
+                "fecha" => $persona['fecha'],
+                "id" => $persona['id_vacuna']
+            );
+            return $data;
+        }
+        public function actualizarVacuna($datos) {
+            $conexion = parent::conectar();
+            $sql = "UPDATE t_vacunas SET nombre = ?, 
+                                        fecha = ?
+                                        WHERE id_vacuna = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('ssi',   $datos['nombre'],
+                                            $datos['fecha'],
+                                            $datos['id_vacuna']);
+            return $query -> execute();
+        }
     }
 
 

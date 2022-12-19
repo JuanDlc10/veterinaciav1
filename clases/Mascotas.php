@@ -46,6 +46,48 @@
             $query -> bind_param('i',$idMascota);
             return $query -> execute();
         }
+        public function editarMascota($idMascota) {
+            $conexion = parent::conectar();
+            $sql = "SELECT * FROM t_mascota WHERE id_mascota = '$idMascota'";
+            $respuesta = mysqli_query($conexion,$sql);
+            $mascota = mysqli_fetch_array($respuesta);
+
+            $data = array ( 
+                "tipo" => $mascota['tipo'],
+                "nombre" => $mascota['nombre'],
+                "fecha_nacimiento" => $mascota['fecha_nacimiento'],
+                "tamanio" => $mascota['tamanio'],
+                "raza" => $mascota['raza'],
+                "sexo" => $mascota['sexo'],
+                "descripcion" => $mascota['descripcion'],
+                "id" => $mascota['id_mascota']
+            );
+            return $data;
+        }
+        public function actualizarMascota($datos) {
+            $conexion = parent::conectar();
+            $sql = "UPDATE t_mascota SET 
+                                        id_persona = ?,
+                                        tipo = ?,
+                                        nombre = ?,
+                                        fecha_nacimiento = ?,
+                                        raza = ?,
+                                        tamanio = ?,
+                                        sexo = ?,
+                                        descripcion = ?
+                                        WHERE id_mascota = ?";
+            $query = $conexion -> prepare($sql);
+            $query -> bind_param('isssssssi', $datos['id_persona'],
+                                            $datos['tipo'],
+                                            $datos['nombre'],
+                                            $datos['fecha'],
+                                            $datos['raza'],
+                                            $datos['tamanio'],
+                                            $datos['sexo'],
+                                            $datos['descripcion'],
+                                            $datos['id_mascota']);
+            return $query -> execute();
+        }
     }
 
 
